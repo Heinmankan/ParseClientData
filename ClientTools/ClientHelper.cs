@@ -95,6 +95,8 @@ namespace ClientTools
             {
                 var outputFilename = GenerateOutputFilename(filename, "_NameFrequency");
 
+                // Take Firstname and Lastname and make one list (concat) and then group the new list.
+                // Order by Count descending and then by name ascending.
                 var query = clients
                     .Select(r => r.FirstName)
                     .Concat(clients.Select(r => r.LastName))
@@ -125,6 +127,7 @@ namespace ClientTools
             {
                 var outputFilename = GenerateOutputFilename(filename, "_Addresses");
 
+                // Use the Client class helper methods to sort by street name and then by street number.
                 var query = clients
                     .OrderBy(r => r.StreetName)
                     .ThenBy(r => r.StreetNumber)
