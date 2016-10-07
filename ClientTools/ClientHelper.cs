@@ -133,6 +133,8 @@ namespace ClientTools
                     .ThenBy(r => r.StreetNumber)
                     .Select(r => new { Address = r.Address });
 
+                // TODO: Incorrect Address fields will be displayed at the top of the list and not sorted. Fix handling in Client class - Helper Properties.
+
                 using (StreamWriter writer = new StreamWriter(outputFilename))
                 {
                     foreach (var item in query)

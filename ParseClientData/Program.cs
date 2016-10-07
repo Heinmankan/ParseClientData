@@ -9,7 +9,7 @@ namespace ParseClientData
     {
         static void Main(string[] args)
         {
-            // Check the command line parameters. If not correct, exit the application.
+            // Check the command line arguments. If not correct, exit the application.
             if (!ArgumentsCorrect(args)) return;
 
             // Populate the clients from the input file.

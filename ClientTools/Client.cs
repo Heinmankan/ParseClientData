@@ -55,7 +55,15 @@ namespace ClientTools
         /// </summary>
         public string StreetNumber
         {
-            get { return Address.Substring(0, Address.IndexOf(' ')).Trim(); }
+            get
+            {
+                // TODO: Empty or invalid address will be ignored for now. Get information on how to handle this error as specifications has no information.
+
+                if (string.IsNullOrWhiteSpace(Address) || !Address.Contains(" "))
+                    return string.Empty;
+
+                return Address.Substring(0, Address.IndexOf(' ')).Trim();
+            }
         }
 
         /// <summary>
@@ -63,7 +71,15 @@ namespace ClientTools
         /// </summary>
         public string StreetName
         {
-            get { return Address.Substring(Address.IndexOf(' ')).Trim(); }
+            get
+            {
+                // TODO: Empty or invalid address will be ignored for now. Get information on how to handle this error as specifications has no information.
+
+                if (string.IsNullOrWhiteSpace(Address) || !Address.Contains(" "))
+                    return string.Empty;
+
+                return Address.Substring(Address.IndexOf(' ')).Trim();
+            }
         }
 
         #endregion

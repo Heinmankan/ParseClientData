@@ -21,7 +21,6 @@ namespace ClientTools.Test
             Assert.AreEqual(result, true);
         }
 
-
         [TestMethod]
         public void TestIsClientHeaderRow2()
         {
